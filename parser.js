@@ -47,9 +47,9 @@ var savePng = function (buff, index, dir, done) {
 		for (var x = 0; x < png.width; x++) {
 			var idx = (png.width * y + x) << 2;
 			png.data[idx  ] = buff.readInt8(y*png.height+x+1);		// R
-			png.data[idx+1] = buff.readInt8(y*png.height+x+1024+1); // G
-			png.data[idx+2] = buff.readInt8(y*png.height+x+2048+1); // B
-			png.data[idx+3] = 255; 									// A
+			png.data[idx+1] = buff.readInt8(y*png.height+x+1024+1);	// G
+			png.data[idx+2] = buff.readInt8(y*png.height+x+2048+1);	// B
+			png.data[idx+3] = 255;									// A
 		}
 	}
 
