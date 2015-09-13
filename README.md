@@ -9,3 +9,5 @@ This initial code is a way to get to grips with the CIFAR-10 dataset & prepare f
 
 ## improvements
 Currently writing images to disk is blocking as the read loop waits for a callback from writing an RGB buffer to png. Can be paralleled with promises or other throttling.
+
+> Krizhevsky, A., 2009. Learning Multiple Layers of Features from Tiny Images. , p.1-60.
