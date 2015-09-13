@@ -10,7 +10,7 @@ var program = require('commander')
  
 // constants
 var CHUNK_SIZE = 3073;
-var PROCESS_LIMIT = -1;
+var PROCESS_LIMIT = 10;
 
 // argv parse
 program
@@ -46,10 +46,10 @@ var savePng = function (buff, index, dir, done) {
 	for (var y = 0; y < png.height; y++) {
 		for (var x = 0; x < png.width; x++) {
 			var idx = (png.width * y + x) << 2;
-			png.data[idx  ] = buff.readInt8(y*png.height+x+1);		// R
-			png.data[idx+1] = buff.readInt8(y*png.height+x+1024+1);	// G
-			png.data[idx+2] = buff.readInt8(y*png.height+x+2048+1);	// B
-			png.data[idx+3] = 255;									// A
+			png.data[idx  ] = buff.readInt8(y*png.height+x+1);      // R
+			png.data[idx+1] = buff.readInt8(y*png.height+x+1024+1); // G
+			png.data[idx+2] = buff.readInt8(y*png.height+x+2048+1); // B
+			png.data[idx+3] = 255;                                  // A
 		}
 	}
 
